@@ -10,25 +10,24 @@ function TicTacToeCtrl($scope){
 // $scope.winners = [];
 
 $scope.togglePlayer = function(cellIndex){
-	if ($scope.player === 1){
-	//	$scope.player1.push(cellIndex);
-		$scope.board[cellIndex]="X";
-		//console.log(player1);
+	if ($scope.board[cellIndex]==""){
 
-		$scope.player = 2;
-
-
-	}
-	else {
-	//	$scope.player2.push(cellIndex);
-		$scope.board[cellIndex]="O";
-		//console.log(player2);
-
-		$scope.player = 1;
-
-	}
-
+		if($scope.player === 1){
+			//	$scope.player1.push(cellIndex);
+			$scope.board[cellIndex]="X";
+			//console.log(player1);
+			$scope.player = 2;
+			} else {
+			//	$scope.player2.push(cellIndex);
+			$scope.board[cellIndex]="O";
+			//console.log(player2);
+			$scope.player = 1;
+			}
+		};
+	else 
+		console.log("Can't move there!");
 }
+
 
 
 
