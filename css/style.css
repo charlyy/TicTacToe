@@ -1,0 +1,41 @@
+.cells {
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	background-color: darkgrey;
+	float: left;
+	-webkit-transition: width 1.5s, height 1.5s, background-color 0.3s, 
+	-webkit-transform 5s;
+}
+
+.cells:hover {
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	background-color: rgba(110,210,130,0.7);
+	float: left;
+}
+
+.container{
+	height: 463px;
+	width: 463px;
+	margin: 0 auto;
+}
+
+.bgblue {
+	background-color: blue;
+}
+
+.xBackground {
+	background-color: yellow;
+}
+
+.oBackground {
+	background-color: purple;
+}
+
+.container {
+	text-align: center;
+	font-size: 50px;
+}
+

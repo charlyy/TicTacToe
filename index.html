@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tic Tac Toe</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script src="js/script.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body x-ng-app="" x-ng-controller="TicTacToeCtrl">
+
+
+
+
+<div class="container">
+<div class="header">Tic Tac Toe</div>
+	<div x-ng-class="{'cells': true, 'bgblue': $even, xBackground: b=='X', oBackground: b=='O' }" 
+	x-ng-repeat="b in board track by $index" 
+	x-ng-click="togglePlayer($index)">
+	
+	{{ b }} <!-- cells -->
+	{{$index}}
+	</div>
+</div>
+
+</body>
+</html>
