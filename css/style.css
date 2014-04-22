@@ -1,26 +1,37 @@
-.cells {
-	width: 150px;
-	height: 150px;
-	border: 1px solid black;
-	background-color: darkgrey;
-	float: left;
-	-webkit-transition:border-radius 20%, background-color 2.3s, 
-	-webkit-transform 5s;
-}
-
-.cells:hover {
-	width: 150px;
-	height: 150px;
-	border: 1px solid black;
-	background-color: rgba(110,210,130,0.9);
-	float: left;
+html {
+	cursor:crosshair
 }
 
 .container{
 	height: 463px;
 	width: 463px;
 	margin: 0 auto;
+	text-align: center;
+	font-size: 50px;
+	
 }
+
+.cells {
+	width: 150px;
+	height: 150px;
+	border: 2px solid black;
+	background-color: darkgrey;
+	float: left;
+}
+
+.cells:hover {
+	width: 150px;
+	height: 150px;
+/*	background-color: rgba(110,210,130,0.9); */
+	float: left;
+}
+
+.cells:hover{
+	-webkit-transition: background-color 1.2s ease; 
+	border: 2px solid rgb(170,220,220);
+}
+
+
 
 .bgblue {
 	background-color: blue;
@@ -32,10 +43,5 @@
 
 .oBackground {
 	background-color: purple;
-}
-
-.container {
-	text-align: center;
-	font-size: 50px;
 }
 
