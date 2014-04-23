@@ -8,9 +8,30 @@ html {
 	margin: 0 auto;
 	text-align: center;
 	font-size: 50px;
-	
 }
 
+.xBackground div {
+	background: url('../images/x.png');
+	background-size: cover;
+	height: 150px;
+	width: 150px;	
+}
+
+
+
+.oBackground div {
+	background-color: purple;
+	background: url('../images/o.png');
+	background-size: cover;
+	height: 150px;
+	width: 150px;
+}
+
+
+.image{
+	width: 100px;
+	height: 100px;
+}
 .cells {
 	width: 150px;
 	height: 150px;
@@ -31,17 +52,15 @@ html {
 	border: 2px solid rgb(170,220,220);
 }
 
-
-
 .bgblue {
 	background-color: blue;
 }
+
 
 .xBackground {
 	background-color: yellow;
 }
 
-.oBackground {
+.oBackground div {
 	background-color: purple;
 }
-

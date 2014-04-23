@@ -5,7 +5,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script src="js/script.js"></script>
 <link rel="stylesheet" href="css/style.css">
-<script src="js/cursor.js"></script>
+
 </head>
 <body x-ng-controller="TicTacToeCtrl" x-ng-init="board =['','','','','','','','','']">
 
@@ -21,13 +21,9 @@
 			}" 
 			x-ng-repeat="b in board track by $index" 
 			x-ng-click="togglePlayer($index)">
-	
-	{{ ( ( b == 1 ) ? "X" : ( b == -1 ? "O" : "" ) ) }}
-	
-	{{ b }} {{$index}}
-	<!-- cells
-	{{$index}}  -->
-	
+			<div>
+	 			{{$index}}
+			</div>
 
 	</div> <!-- end of cells -->
 </div> <!-- end of container -->
