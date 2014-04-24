@@ -5,7 +5,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script src="js/script.js"></script>
 <link rel="stylesheet" href="css/style.css">
-
+<script src="js/cursor.js"></script>
 </head>
 <body x-ng-controller="TicTacToeCtrl" x-ng-init="board =['','','','','','','','','']">
 
@@ -18,14 +18,15 @@
 			'bgblue': $even, 
 			'xBackground': b=='X', 
 			'oBackground': b=='O' 
-			}" 
+							}" 
 			x-ng-repeat="b in board track by $index" 
 			x-ng-click="togglePlayer($index)">
-			<div>
-	 			{{$index}}
-			</div>
+			
+			<div> </div>
 
 	</div> <!-- end of cells -->
+	<div class="score">Player X Wins:{{xWins}}----Player O Wins:{{oWins}}</div>
+	<div class="reset"><input type="button" value="Reset" x-ng-click="clearBoard();" /></div>
 </div> <!-- end of container -->
 </body>
 </html>

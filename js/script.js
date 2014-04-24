@@ -6,6 +6,8 @@ gameTTT.controller('TicTacToeCtrl', function ($scope){
 $scope.player = 1;
 var moves = 0;
 
+$scope.xWins = 0;
+$scope.oWins = 0;
 
 
   $scope.togglePlayer = function(cellIndex)
@@ -44,44 +46,66 @@ var moves = 0;
     
 
 
+var youWon = function(){
+  if ($scope.player == 1){
+    $scope.xWins++;
+  }else {
+    $scope.oWins++;
+  }
+}
+
+$scope.clearBoard = function(){
+  $scope.board = ['','','','','','','','',''];
+  moves = 0;
+  $scope.player = 1;
+}
+
 
  var winFunction = function()
         {
-          console.log("hello")
+          console.log("hello");
 
           if (moves > 4){
-            console.log("hello1")
+            console.log("hello1");
             if($scope.board[0] == $scope.board[1] && $scope.board[1] == $scope.board[2])
             {
               console.log("You win!");
+              youWon();
             }
               else if($scope.board[3] == $scope.board[4] && $scope.board[4] == $scope.board[5])
             {
               console.log("You win!");
+        
             }
               else if($scope.board[6] == $scope.board[7] && $scope.board[7] == $scope.board[8])
             {
               console.log("You win!");
+          
             }
               else if($scope.board[0] == $scope.board[3] && $scope.board[3] == $scope.board[6])
             {
               console.log("You win!");
+             
             }
               else if($scope.board[1] == $scope.board[4] && $scope.board[4] == $scope.board[7])
             {
               console.log("You win!");
+             
             }
               else if($scope.board[2] == $scope.board[5] && $scope.board[5] == $scope.board[8])
             {
               console.log("You win!");
+             
             }
               else if($scope.board[0] == $scope.board[4] && $scope.board[4] == $scope.board[8])
             {
               console.log("You win!");
+             
             }
               else if($scope.board[2] == $scope.board[4] && $scope.board[4] == $scope.board[6])
             {
               console.log("You win!");
+              
             }
               else 
               {
