@@ -8,8 +8,9 @@ var moves = 0;
 
 $scope.xWins = 0;
 $scope.oWins = 0;
+$scope.ties = 0;
 
-
+// Start at player one
   $scope.togglePlayer = function(cellIndex)
   {
     if ($scope.board[cellIndex] == "")
@@ -19,10 +20,9 @@ $scope.oWins = 0;
     
               $scope.board[cellIndex] = 'X';
               console.log(cellIndex);
-              $scope.player = 2;
               moves++;
               winFunction();
-
+              $scope.player = 2;
               
             } 
             else 
@@ -30,10 +30,9 @@ $scope.oWins = 0;
 
 				        $scope.board[cellIndex] = "O";
                 console.log(cellIndex);
-				        $scope.player = 1;
                 moves++;
                 winFunction();
-
+                $scope.player = 1;
               }
 
       }	
@@ -42,17 +41,37 @@ $scope.oWins = 0;
         alert("Can't move there!");
       }			
     };
-      //$scope.winner = function(player)
-    
 
+// var winner = function(){
+//   if($scope.player ==1){
+//     $scope.board = ['X','X','X','X','X','X','X','X','X'];
+//     console.log('X wins!')
+//   } else {
+//     $scope.board = ['O','O','O','O','O','O','O','O','O'];
+//     console.log('O wins!')
+//   }
+// }
+
+  
+    
+var tieGame = function(){
+  $scope.ties++;
+}
 
 var youWon = function(){
   if ($scope.player == 1){
     $scope.xWins++;
-  }else {
+    $scope.board = ['X','X','X','X','X','X','X','X','X'];
+    console.log('X wins!');
+    document.getElementById('htmlBG').style.backgroundImage="url('../images/Xbg.png'), url('../images/xbg2.png');";
+  }else{
     $scope.oWins++;
-  }
-}
+    $scope.board = ['O','O','O','O','O','O','O','O','O'];
+    console.log('O wins!');
+    document.getElementById('htmlBG').style.backgroundImage="url('../images/obg.png'), url('../images/obg2.png');";
+  };
+};
+
 
 $scope.clearBoard = function(){
   $scope.board = ['','','','','','','','',''];
@@ -61,55 +80,48 @@ $scope.clearBoard = function(){
 }
 
 
+
+
  var winFunction = function()
         {
-          console.log("hello");
-
           if (moves > 4){
-            console.log("hello1");
-            if($scope.board[0] == $scope.board[1] && $scope.board[1] == $scope.board[2])
+
+            if($scope.board[0] != '' && $scope.board[0] == $scope.board[1] && $scope.board[1] == $scope.board[2])
             {
-              console.log("You win!");
               youWon();
             }
-              else if($scope.board[3] == $scope.board[4] && $scope.board[4] == $scope.board[5])
+              else if($scope.board[3] != '' && $scope.board[3] == $scope.board[4] && $scope.board[4] == $scope.board[5])
             {
-              console.log("You win!");
-        
+              youWon();
             }
-              else if($scope.board[6] == $scope.board[7] && $scope.board[7] == $scope.board[8])
+              else if($scope.board[6] != '' && $scope.board[6] == $scope.board[7] && $scope.board[7] == $scope.board[8])
             {
-              console.log("You win!");
-          
+              youWon();
             }
-              else if($scope.board[0] == $scope.board[3] && $scope.board[3] == $scope.board[6])
+              else if($scope.board[0] != '' && $scope.board[0] == $scope.board[3] && $scope.board[3] == $scope.board[6])
             {
-              console.log("You win!");
-             
+              youWon();
             }
-              else if($scope.board[1] == $scope.board[4] && $scope.board[4] == $scope.board[7])
+              else if($scope.board[1] != '' && $scope.board[1] == $scope.board[4] && $scope.board[4] == $scope.board[7])
             {
-              console.log("You win!");
-             
+              youWon();
             }
-              else if($scope.board[2] == $scope.board[5] && $scope.board[5] == $scope.board[8])
+              else if($scope.board[2] != '' && $scope.board[2] == $scope.board[5] && $scope.board[5] == $scope.board[8])
             {
-              console.log("You win!");
-             
+              youWon();
             }
-              else if($scope.board[0] == $scope.board[4] && $scope.board[4] == $scope.board[8])
+              else if($scope.board[0] != '' && $scope.board[0] == $scope.board[4] && $scope.board[4] == $scope.board[8])
             {
-              console.log("You win!");
-             
+              youWon();
             }
-              else if($scope.board[2] == $scope.board[4] && $scope.board[4] == $scope.board[6])
+              else if($scope.board[2] != '' && $scope.board[2] == $scope.board[4] && $scope.board[4] == $scope.board[6])
             {
-              console.log("You win!");
-              
+              youWon();
             }
-              else 
+              else if (moves == 9)
               {
               console.log("hi");
+              tieGame();
               } 
           }
       };

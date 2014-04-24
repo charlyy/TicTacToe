@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html x-ng-app="gameTTT">
+<html x-ng-app="gameTTT" id="htmlBG">
 <head>
 <title>Tic Tac Toe</title>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script src="js/script.js"></script>
-<link rel="stylesheet" href="css/style.css">
 <script src="js/cursor.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
 </head>
 <body x-ng-controller="TicTacToeCtrl" x-ng-init="board =['','','','','','','','','']">
 
@@ -15,18 +17,28 @@
 			
 			<div x-ng-class="{
 			'cells': true, 
-			'bgblue': $even, 
+			'bgEven': $even,
+			'bgOdd': $odd, 
 			'xBackground': b=='X', 
 			'oBackground': b=='O' 
 							}" 
 			x-ng-repeat="b in board track by $index" 
 			x-ng-click="togglePlayer($index)">
-			
 			<div> </div>
 
 	</div> <!-- end of cells -->
-	<div class="score">Player X Wins:{{xWins}}----Player O Wins:{{oWins}}</div>
-	<div class="reset"><input type="button" value="Reset" x-ng-click="clearBoard();" /></div>
+	
+	<div class="score">
+	Player-X Wins: {{xWins}} <br />  
+	Player-O Wins: {{oWins}} <br /> 
+	Ties: {{ties}}
+	</div>
+	<br />
+	<div class="reset">
+	<button
+	style="font-size: 25px; font-family: Arial; border: 10px double black;"  
+	value="Reset" x-ng-click="clearBoard();">Reset</button>
+	</div>
 </div> <!-- end of container -->
 </body>
 </html>

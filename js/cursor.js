@@ -55,9 +55,10 @@ function sparkle() {
     for (c=0; c<sparkles; c++) if (!starv[c]) {
       star[c].style.left=(starx[c]=x)+"px";
       star[c].style.top=(stary[c]=y)+"px";
+      // Clip is distance from cursor
       star[c].style.clip="rect(0px, 5px, 5px, 0px)";
       star[c].style.visibility="visible";
-      starv[c]=50;
+      starv[c]=550;
       break;
     }
   }
@@ -69,6 +70,7 @@ function sparkle() {
 }
 
 function update_star(i) {
+                  // leave this alone
   if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
   if (starv[i]) {
     stary[i]+=1+Math.random()*3;
