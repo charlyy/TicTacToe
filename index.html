@@ -8,7 +8,7 @@
 <script src="js/script.js"></script>
 <script src="js/cursor.js"></script>
 <link rel="stylesheet" href="css/style.css">
-<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
 </head>
 <body x-ng-controller="TicTacToeCtrl">
@@ -29,11 +29,12 @@
 			<div> </div>
 
 	</div> <!-- end of cells -->
-	
-	<div class="score">
-	Player-X Wins: {{xWins}} <br />  
-	Player-O Wins: {{oWins}} <br /> 
-	Ties: {{ties}}
+</div> <!-- end of container -->
+<div class="clearfix"></div>
+<div class="score">
+	Player-X Wins: {{game.xWins}} <br />  
+	Player-O Wins: {{game.oWins}} <br /> 
+	Ties: {{game.ties}} <br />
 	</div>
 	<br />
 	<div class="reset">
@@ -41,6 +42,6 @@
 	style="font-size: 25px; font-family: Arial; border: 10px double black;"  
 	value="Reset" x-ng-click="clearBoard();">Reset</button>
 	</div>
-</div> <!-- end of container -->
+
 </body>
 </html>

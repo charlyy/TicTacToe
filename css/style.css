@@ -10,41 +10,41 @@
 html {
 	cursor:crosshair;
 	background-color: rgba(0,0,0,.7);
-	background-image: linear-gradient(rgba(10,30,100,.9),rgba(70,100,250,.4));
-					 
-					}
-/*
+	background-image: url('../images/obg.png'),url('../images/Xbg.png');
+	-webkit-animation: xo 12s linear infinite;}
+
 @-webkit-keyframes xo {
 	0% {background-position: 0px 0px;}
-	100% {background-position: 500px 500px, 400px 400px, 500px 500px, 400px 400px}
-}*/
+	100% {background-position: 500px 1000px, 500px 500px}
+}
 
 .header {
 	font-family: 'Pacifico', 'cursive';
+	color: white;
 }
+
 .container{
 	height: 470px;
 	width: 470px;
 	margin: 0 auto;
 	text-align: center;
 	font-size: 50px;
-	color: white;
+	color: black;
 }
 
 .xBackground div {
-	background: url('../images/x.png');
+	background: url('../images/Xpic.png');
 	background-size: cover;
 	height: 150px;
 	width: 150px;	
 }
 
 .oBackground div {
-	background: url('../images/o.png');
+	background: url('../images/Opic.png');
 	background-size: cover;
 	height: 150px;
 	width: 150px;
 }
-
 
 .image{
 	width: 100px;
@@ -70,7 +70,7 @@ html {
 	width: 150px;
 	height: 150px;
 	float: left;
-	-webkit-transition: background-color 2s ease; 
+	-webkit-transition: background 2s ease; 
 	border: 3px solid rgb(170,220,240);
 }
 
@@ -90,9 +90,8 @@ html {
 	width: 20px;
 }
 
-.reset {
-	margin: 0 auto;
-	margin-top: -57px;
+.clearfix {
+	clear: both;
 }
 
 .score{
@@ -100,6 +99,14 @@ html {
 	font-size: 25px;
 	font-weight: lighter;
 	font-family: Arial;
+	text-align: center;
+	color: white;
+}
+
+.reset {
+	text-align: center;
+	margin: 0 auto;
+	margin: -20px;
 }
 
 .winNum{
