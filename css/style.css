@@ -1,18 +1,23 @@
-/* linear-gradient(rgba(10,30,100,.9),rgba(70,100,250,.4)), */
+/* linear-gradient(rgba(10,30,100,.9),rgba(70,100,250,.4)), 
+
+
+ url('../images/obg.png'), url('../images/obg2.png'),
+					  url('../images/Xbg.png'), url('../images/xbg2.png') ;
+					  -webkit-animation: xo 12s linear infinite;
+
+*/
 
 html {
 	cursor:crosshair;
 	background-color: rgba(0,0,0,.7);
-	background-image: 
-					  url('../images/obg.png'), url('../images/obg2.png'),
-					  url('../images/Xbg.png'), url('../images/xbg2.png') ;
-					  -webkit-animation: xo 12s linear infinite;
+	background-image: linear-gradient(rgba(10,30,100,.9),rgba(70,100,250,.4));
+					 
 					}
-
+/*
 @-webkit-keyframes xo {
 	0% {background-position: 0px 0px;}
 	100% {background-position: 500px 500px, 400px 400px, 500px 500px, 400px 400px}
-}
+}*/
 
 .header {
 	font-family: 'Pacifico', 'cursive';
@@ -94,7 +99,7 @@ html {
 	margin: 0 auto;
 	font-size: 25px;
 	font-weight: lighter;
-	font-family: 'Pacifico', 'cursive';
+	font-family: Arial;
 }
 
 .winNum{

@@ -3,13 +3,15 @@
 <head>
 <title>Tic Tac Toe</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/cursor.js"></script>
 <link rel="stylesheet" href="css/style.css">
 <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
 </head>
-<body x-ng-controller="TicTacToeCtrl" x-ng-init="board =['','','','','','','','','']">
+<body x-ng-controller="TicTacToeCtrl">
 
 <div class="container">
 	
@@ -22,7 +24,7 @@
 			'xBackground': b=='X', 
 			'oBackground': b=='O' 
 							}" 
-			x-ng-repeat="b in board track by $index" 
+			x-ng-repeat="b in game.board track by $index" 
 			x-ng-click="togglePlayer($index)">
 			<div> </div>
 
