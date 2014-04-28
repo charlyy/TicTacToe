@@ -122,7 +122,6 @@ $scope.clearBoard = function()
   $scope.game.moves = 0;
   $scope.game.won =  false;
   $scope.game.$save();
-  $scope.game.player = 1;
 }
 
  var winFunction = function()
@@ -161,7 +160,7 @@ $scope.clearBoard = function()
             {
               youWon();
             }
-              else if (moves == 9)
+              else if ($scope.game.moves == 9)
               {
               console.log("hi");
               tieGame();
