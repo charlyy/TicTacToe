@@ -4,7 +4,6 @@ gameTTT.controller('TicTacToeCtrl', function ($scope, $firebase){
 
 // Track if we're player 1 or 2
 var playerNum = null;
-var moves = 0;
 
     var ticTacRef = new Firebase("https://elfuego.firebaseio.com/");
     var lastGame;
